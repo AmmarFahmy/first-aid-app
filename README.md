@@ -1,1 +1,0 @@
-# first-aid-app
