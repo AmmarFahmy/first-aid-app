@@ -9,6 +9,7 @@ from agno.media import Image as AgnoImage
 from pathlib import Path
 import tempfile
 import os
+from pytube import Search
 
 # Configure logging for errors only
 logging.basicConfig(level=logging.ERROR)
@@ -211,6 +212,12 @@ if st.session_state.api_key_input:
                         
                         st.subheader("🌐 Web Resources")
                         st.markdown(response.content)
+                        
+                        st.markdown("#### YouTube Videos")
+                        s = Search(f"first aid videos for {context}")
+                        for video in s.results[:3]:
+                            print(video.title, video.watch_url)
+                            st.markdown(f"{video.title} - {video.watch_url}")
                     
                 except Exception as e:
                     logger.error(f"Error during analysis: {str(e)}")
