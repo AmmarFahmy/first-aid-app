@@ -86,10 +86,10 @@ with st.sidebar:
         st.session_state.api_key_input = ""
         
     api_key = st.text_input(
-        "Enter your Gemini API Key",
+        "Enter your OpenRouter API Key",
         value=st.session_state.api_key_input,
         type="password",
-        help="Get your API key from Google AI Studio",
+        help="Get your API key from OpenRouter",
         key="api_key_widget"  
     )
 
@@ -102,8 +102,7 @@ with st.sidebar:
         st.warning("Please enter your API key to proceed")
         st.markdown("""
         To get your API key:
-        1. Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
-        2. Enable the Generative Language API in your [Google Cloud Console](https://console.developers.google.com/apis/api/generativelanguage.googleapis.com)
+        Go to [OpenRouter](https://openrouter.ai/settings/keys)
         """)
 
 st.title("Virtual First Aid Assistant")
